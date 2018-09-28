@@ -1,0 +1,25 @@
+<ons-page>
+    <ons-toolbar>
+        <div class="left"><ons-back-button></ons-back-button></div>
+        <div class="center">Access Card</div>
+        <div class="right"></div>
+    </ons-toolbar>
+    <ons-card style="padding: 5px;">
+        <div class="content" ng-if="uType == 'main'">
+            <div ons-if-orientation="portrait" style="text-align: center; width: 100%;">
+                <img src='http://eduplexsport.com/dash/api/buildCard/buildcard.php?uid={{uid}}&rotate=270' style="margin: auto; width: 100%;" />
+            </div>
+            <div ons-if-orientation="landscape" style="text-align: center; width: 100%;">
+                <img src=http://eduplexsport.com/dash/api/buildCard/buildcard.php?uid={{uid}}&rotate=0' style="margin: auto; width: 100%;" />
+            </div>
+        </div>
+        <div class="content" ng-if="uType != 'main'">
+            <div ons-if-orientation="portrait" style="text-align: center; width: 100%;">
+                <img src='http://eduplexsport.com/dash/api/buildCard/buildDepCard.php?uid={{uid}}&rotate=270' style="margin: auto; width: 100%;" />
+            </div>
+            <div ons-if-orientation="landscape" style="text-align: center; width: 100%;">
+                <img src=http://eduplexsport.com/dash/api/buildCard/buildDepCard.php?uid={{uid}}&rotate=0' style="margin: auto; width: 100%;" />
+            </div>
+        </div>
+    </ons-card>
+</ons-page>

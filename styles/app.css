@@ -1,0 +1,25 @@
+.page__background {
+    background-image: url(../images/shop-background.jpg);
+    background-position: top center;
+    background-repeat: repeat-x;
+    background-attachment: fixed;
+    background-origin: padding-box;
+    background-clip: content-box;
+    background-color: #254a91; 
+}
+
+/* top banner */
+.toolbar {
+    background-color: #254a91 !important;
+}
+
+.topBanner, .toolbar__title {
+    color: white;
+    /*height: 250px;*/
+    text-align: center;
+}
+.text-input {
+    background-color: #eee;
+    padding: 5px;
+    height: 35px;
+}

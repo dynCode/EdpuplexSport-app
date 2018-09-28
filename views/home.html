@@ -1,0 +1,32 @@
+<ons-page>
+    <ons-toolbar>
+        <div class="left"></div>
+        <div class="center">HOME</div>
+        <div class="right">
+            <ons-toolbar-button ng-click="LogOut();">
+                <ons-icon icon="ion-lock"></ons-icon>
+            </ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+    <p style="text-align: center; padding: 10px 30px; color: #fff;">
+        <img src="images/logo.png" alt="logo" style="width: 100%; max-width: 324px;" />
+    </p>
+    <ons-card>
+        
+        <div class="title">
+            Welcome {{userNS}}
+        </div>
+        <div class="content">
+            <div style="text-align: center; margin-top: 30px">
+                <p style="margin-top: 30px;">
+                    <ons-button modifier="large" ng-click="myNavigator.pushPage('views/accessCard.html', { animation : 'fade' });">My Access Card</ons-button>
+                </p>
+            </div>
+            <div ng-if="deps.length > 0">
+                <div ng-repeat="dep in deps">
+                    <p><ons-button modifier="large" ng-click="depsAccessCard(dep.d_id);">{{dep.d_name}}'s Access Card</ons-button></p>
+                </div>
+            </div>
+        </div>
+    </ons-card>
+</ons-page>
