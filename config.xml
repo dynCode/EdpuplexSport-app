@@ -2,8 +2,8 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.eduplexsport"
-        versionCode = "100" 
-        version   = "1.0.0">
+        versionCode = "101" 
+        version   = "1.0.1">
 
     <name>Eduplex Sport</name>
 
@@ -74,6 +74,7 @@
     
     <plugin name="cordova-plugin-device-orientation" />
     <plugin name="cordova-plugin-whitelist" />
+    <plugin name="cordova-plugin-inappbrowser" />
 
     <!-- Define app icon for each platform. -->
     <icon src="icon.png" />
@@ -92,6 +93,8 @@
     <allow-intent href="tel:*" />
     <!-- Allow geo: links to open maps -->
     <allow-intent href="geo:*" />
+    <!-- Allow mailto: links to open maps -->
+    <allow-intent href="mailto:*" />
     <!-- Allow links to web pages to open in a browser -->
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />

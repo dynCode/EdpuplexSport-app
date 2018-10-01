@@ -55,12 +55,12 @@ module.controller('AppController', function($scope, $http, $window, $timeout) {
             })
             .error(function(data, status) {
                 $timeout(function(){
-                    myNavigator.pushPage('views/login.html', { animation : 'fade' });
+                    myNavigator.pushPage('views/welcome.html', { animation : 'fade' });
                 },'2000');
             });
         } else {
             $timeout(function(){
-                myNavigator.pushPage('views/login.html', { animation : 'fade' });
+                myNavigator.pushPage('views/welcome.html', { animation : 'fade' });
             },'2000');
         }
     };
