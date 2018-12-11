@@ -29,19 +29,47 @@
         <link rel="icon" href="/favicon.ico" type="image/x-icon">
         
     </head>
-    <body ng-controller="AppController">
-        <ons-navigator title="Navigator" var="myNavigator">    
-            <ons-page ng-init="init()">
-                <p style="text-align: center; padding: 10px 30px; color: #fff;">
-                    <img src="images/logo.png" alt="logo" style="width: 100%; max-width: 324px;" />
-                    <br><br>
-                    <ons-icon size="50px" spin icon="ion-refresh"></ons-icon>
-                    <br><br>
-                    Loading...
-                </p>
-            </ons-page>
-        </ons-navigator>
-        
+    <body>
+        <ons-splitter ng-controller="AppController" id="AppController" var="menu">
+            <ons-splitter-side id="menu" side="left" width="220px" collapse swipeable>
+                <ons-page modifier="splitMenu">
+                    
+                    <ons-list>
+                        <ons-list-item>
+                            <ons-row>
+                                <ons-col>MENU</ons-col>
+                                <ons-col class="text-right"><ons-icon icon="md-close" ng-click="closeMenu()"></ons-icon></ons-col>
+                            </ons-row>
+                        </ons-list-item>
+                        <ons-list-item ng-click="loadPage('views/login.html')" ng-if="userLoggedin == false" tappable>
+                            Login
+                        </ons-list-item>
+                        <ons-list-item ng-click="loadPage('views/welcome.html')" tappable>
+                            Our Zones
+                        </ons-list-item>
+                        <ons-list-item ng-click="loadPage('views/contactUs.html')" tappable>
+                            Contact Us
+                        </ons-list-item>
+                        <ons-list-item ng-click="logout()" ng-if="userLoggedin" tappable>
+                            Logout
+                        </ons-list-item>
+                    </ons-list>
+                </ons-page>
+            </ons-splitter-side>
+            <ons-splitter-content>
+                <ons-navigator title="Navigator" var="myNavigator">    
+                    <ons-page ng-init="init()">
+                        <p style="text-align: center; padding: 10px 30px; color: #fff;">
+                            <img src="images/logo.png" alt="logo" style="width: 100%; max-width: 324px;" />
+                            <br><br>
+                            <ons-icon size="50px" spin icon="ion-refresh"></ons-icon>
+                            <br><br>
+                            Loading...
+                        </p>
+                    </ons-page>
+                </ons-navigator>
+            </ons-splitter-content>
+        </ons-splitter>
         <ons-modal var="modal">
             <br>
             <br>{{data.errorCode}}

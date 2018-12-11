@@ -1,35 +1,37 @@
 <ons-page>
     <ons-toolbar>
-        <div class="left"></div>
+        <div class="left"><ons-toolbar-button ng-click="openMenu()">
+                <ons-icon icon="md-menu"></ons-icon>
+            </ons-toolbar-button></div>
         <div class="center">Welcome</div>
-        <div class="right"></div>
+        <div class="right">
+            <ons-toolbar-button ng-click="loadPage('views/login.html')">
+                <ons-icon icon="md-lock"></ons-icon>
+            </ons-toolbar-button>
+        </div>
     </ons-toolbar>
     <p style="text-align: center; padding: 10px 30px; color: #fff;">
-        <img src="images/logo.png" alt="logo" style="width: 100%; max-width: 324px;" />
+        <img src="images/logo.png" alt="logo" style="width: 50%; max-width: 162px;" />
     </p>
+    <div class="pagetitle text-center boxShadow">
+        <h1>Where <span class="red-text">Kids</span> Bring Their <span class="red-text">Parents</span> to <span class="red-text">PLAY</span></h1>
+    </div>
     <ons-card>
         
-        <div class="title">
-            <h1 class="red-text">Welcome</h1>
-        </div>
         <div class="content">
-            <ons-list>
-                <ons-list-item modifier="chevron" class="main-nav" ng-click="myNavigator.pushPage('views/login.html', { animation : 'fade' });" tappable>Login</ons-list-item>
-                <ons-list-item expandable class="main-nav">
-                    Our Zones
-                    <div class="expandable-content">
-                        <ons-list>
-                            <ons-list-item modifier="chevron" class="sub-nav" ng-click="myNavigator.pushPage('views/bikeZone.html', { animation : 'fade' });" tappable>Bike Zone</ons-list-item>
-                            <ons-list-item modifier="chevron" class="sub-nav" ng-click="myNavigator.pushPage('views/strikeZone.html', { animation : 'fade' });" tappable>Strike Zone</ons-list-item>
-                            <ons-list-item modifier="chevron" class="sub-nav" ng-click="myNavigator.pushPage('views/testZone.html', { animation : 'fade' });" tappable>Test Zone</ons-list-item>
-                            <ons-list-item modifier="chevron" class="sub-nav" ng-click="myNavigator.pushPage('views/powerZone.html', { animation : 'fade' });" tappable>Power Zone</ons-list-item>
-                            <ons-list-item modifier="chevron" class="sub-nav" ng-click="myNavigator.pushPage('views/crossfit.html', { animation : 'fade' });" tappable>Crossfit</ons-list-item>
-                        </ons-list>
-                    </div>
-                </ons-list-item>
-                <ons-list-item modifier="chevron" class="main-nav" ng-click="myNavigator.pushPage('views/packages.html', { animation : 'fade' });" tappable>Packages</ons-list-item>
-                <ons-list-item modifier="chevron" class="main-nav" ng-click="myNavigator.pushPage('views/contactUs.html', { animation : 'fade' });" tappable>Contact Us</ons-list-item>
-            </ons-list>
+            <h2 class="text-center">OUR <span class="red-text">ZONES</span></h2>
+            <ons-row class="text-center">
+                <ons-col ng-click="myNavigator.pushPage('views/bikeZone.html', { animation : 'fade' });" width="33.3%"><img src="images/Bikezone.jpg" alt="" width="100%"></ons-col>
+                <ons-col ng-click="myNavigator.pushPage('views/strikeZone.html', { animation : 'fade' });" width="33.3%"><img src="images/Strikezone.jpg" alt="" width="100%"></ons-col>
+                <ons-col ng-click="myNavigator.pushPage('views/testZone.html', { animation : 'fade' });" width="33.3%"><img src="images/Testzone.jpg" alt="" width="100%"></ons-col>
+            </ons-row>
+            <ons-row class="text-center">
+                <ons-col width="16.5%"></ons-col>
+                <ons-col ng-click="myNavigator.pushPage('views/powerZone.html', { animation : 'fade' });" width="33%"><img src="images/Powerzone.jpg" alt="" width="100%"></ons-col>
+                <ons-col ng-click="myNavigator.pushPage('views/crossfit.html', { animation : 'fade' });" width="33%"><img src="images/Crossfit.jpg" alt="" width="100%"></ons-col>
+                <ons-col width="16.5%"></ons-col>
+            </ons-row>
+            <h2 class="text-center">WHAT WE <span class="red-text">OFFER</span></h2>
             <p> Eduplex Sport’s facilities have been specifically designed with the aim of providing FAMILIES with the opportunity to relax in the outdoors during the week as well as over weekends. We cater for family fun including birthday parties, company and sporting events.</p>
             <p>Our state of the art facilities includes our unique pump and mountain bike track – designed by Velosolutions. We provide safe walking and jogging routes. Other facilities include tennis and netball courts, cricket nets, cricket, hockey, rugby, athletics, softball and soccer fields. For a quick break or bite before the energy starts pumping we have a kiosk where water, cold drinks, energy drinks, coffee and health snacks can be bought. </p>
         </div>

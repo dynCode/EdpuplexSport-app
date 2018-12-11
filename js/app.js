@@ -25,6 +25,7 @@ module.controller('AppController', function($scope, $http, $window, $timeout) {
     $scope.data = [];
 
     //Membder Data
+    $scope.userLoggedin = false;
     $scope.uid = '';
     $scope.userNS = ''; 
     $scope.uType = '';
@@ -48,6 +49,7 @@ module.controller('AppController', function($scope, $http, $window, $timeout) {
                     $scope.userNS = data['userNS']; 
                     $scope.uType = data['uType'];
                     $scope.deps = data['deps'];
+                    $scope.userLoggedin = true;
                 } 
                 $timeout(function(){
                     myNavigator.pushPage('views/home.html', { animation : 'fade' });
@@ -55,14 +57,32 @@ module.controller('AppController', function($scope, $http, $window, $timeout) {
             })
             .error(function(data, status) {
                 $timeout(function(){
-                    myNavigator.pushPage('views/welcome.html', { animation : 'fade' });
+                    myNavigator.pushPage('views/login.html', { animation : 'fade' });
                 },'2000');
             });
         } else {
             $timeout(function(){
-                myNavigator.pushPage('views/welcome.html', { animation : 'fade' });
+                myNavigator.pushPage('views/login.html', { animation : 'fade' });
             },'2000');
         }
+    };
+
+    //side nav tools
+    $scope.openMenu = function () {
+        var menu = document.getElementById('menu');
+        menu.open();
+    };
+
+    $scope.loadPage = function (page) {
+        var menu = document.getElementById('menu');
+
+        menu.close();
+        myNavigator.resetToPage(page, { animation: 'fade' });
+    };
+
+    $scope.closeMenu = function () {
+        var menu = document.getElementById('menu');          
+        menu.close();
     };
 
     // login checker
