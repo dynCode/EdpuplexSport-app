@@ -14,7 +14,7 @@
     <ons-card>
         
         <div class="title">
-            Please Login
+            Member Login
         </div>
         <div class="content">
             <div style="text-align: center; margin-top: 30px">
@@ -38,7 +38,7 @@
                     <ons-button modifier="large" ng-click="LogIn()">Login</ons-button>
                 </p>
                 <p style="margin-top: 30px;">
-                    <ons-button modifier="large--cta" onclick="window.open('https://eduplexsport.com/dash/login.php','_system','location=yes')">Register Online</ons-button>
+                    <ons-button modifier="large--cta" ng-click="myNavigator.pushPage('views/contactUs.html', { animation : 'fade' });">Emergency Contact</ons-button>
                 </p>
             </div>
             <ons-button modifier="large--quiet" ng-click="myNavigator.pushPage('views/privacy.html', { animation : 'fade' });">Privacy Policy</ons-button>
